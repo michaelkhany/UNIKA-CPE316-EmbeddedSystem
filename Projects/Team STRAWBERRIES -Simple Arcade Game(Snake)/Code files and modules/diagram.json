@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "author": "UzBack",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0.17, "left": 66.52, "attrs": {} },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "matrix3",
+      "top": -322,
+      "left": -430,
+      "attrs": { "chain": "4" }
+    },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "matrix4",
+      "top": -206,
+      "left": -430,
+      "attrs": { "chain": "4" }
+    },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "matrix1",
+      "top": -55.7,
+      "left": -430,
+      "attrs": { "chain": "4" }
+    },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "matrix2",
+      "top": 19.5,
+      "left": -430,
+      "attrs": { "chain": "4" }
+    },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick1",
+      "top": -190,
+      "left": 69.54,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "matrix5",
+      "top": -130.9,
+      "left": -430,
+      "attrs": { "chain": "4" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "matrix1:GND", "esp:GND.1", "red", [ "h128", "v200.87", "h-22" ] ],
+    [ "matrix1:V+", "esp:VIN", "red", [ "h120", "v224.38", "h11.34" ] ],
+    [ "matrix1:DIN", "esp:D13", "red", [ "h100", "v185.99" ] ],
+    [ "matrix1:V+.2", "matrix2:V+", "green", [ "h-10", "v140", "h364", "v180" ] ],
+    [ "matrix1:GND.2", "matrix2:GND", "white", [ "h-14", "v136", "h374", "v117" ] ],
+    [ "matrix1:DOUT", "matrix2:DIN", "green", [ "h-18", "v132", "h384", "v110" ] ],
+    [ "matrix1:CS.2", "matrix2:CS", "white", [ "h-22", "v128", "h394", "v154.72" ] ],
+    [ "matrix1:CLK.2", "matrix2:CLK", "green", [ "h-26", "v124", "h404", "v170.91" ] ],
+    [ "matrix1:CLK", "esp:D14", "red", [ "h90", "v274.94" ] ],
+    [ "matrix3:V+.2", "matrix4:V+", "green", [ "h-16", "v-24", "h390", "v160.52" ] ],
+    [ "matrix3:GND.2", "matrix4:GND", "white", [ "h-22", "v-38", "h400", "v172.37" ] ],
+    [ "matrix3:DOUT", "matrix4:DIN", "green", [ "h-26", "v-54", "h410", "v203.62" ] ],
+    [ "matrix3:CS.2", "matrix4:CS", "white", [ "h-30", "v-68", "h418", "v215.47" ] ],
+    [ "matrix3:CLK.2", "matrix4:CLK", "green", [ "h-34", "v-82", "h426", "v240.24" ] ],
+    [ "matrix2:V+.2", "matrix3:V+", "green", [ "h-40", "v-266", "h396", "v46.66" ] ],
+    [ "matrix2:GND.2", "matrix3:GND", "white", [ "h-44", "v-280", "h396", "v74.89" ] ],
+    [ "matrix2:DOUT", "matrix3:DIN", "green", [ "h-48", "v-294", "h396", "v84.72" ] ],
+    [ "matrix2:CS.2", "matrix3:CS", "white", [ "h-52", "v-308", "h396", "v101.91" ] ],
+    [ "matrix2:CLK.2", "matrix3:CLK", "green", [ "h-56", "v-322", "h396", "v126.46" ] ],
+    [ "joystick1:GND", "esp:GND.1", "black", [ "v65.6", "h38.7", "v153.47" ] ],
+    [ "joystick1:SEL", "esp:D22", "green", [ "v57.01", "h65.49", "v47.88" ] ],
+    [ "joystick1:VERT", "esp:D32", "green", [ "v69.28", "h-52.82", "v78.58" ] ],
+    [ "joystick1:HORZ", "esp:D35", "green", [ "v64.37", "h-66.11", "v71.21" ] ],
+    [ "joystick1:VCC", "esp:VIN", "red", [ "v57.01", "h-51.82", "v178.03" ] ],
+    [ "matrix1:CS", "esp:D15", "red", [ "h111.33", "v221.74", "h170.66", "v-69.98" ] ],
+    [ "matrix4:V+.2", "matrix5:V+", "white", [ "h-4", "v-36", "h362", "v40.4" ] ],
+    [ "matrix4:GND.2", "matrix5:GND", "green", [ "h-8", "v-42", "h362", "v39.13" ] ],
+    [ "matrix4:DOUT", "matrix5:DIN", "white", [ "h-12", "v-48", "h362", "v46.71" ] ],
+    [ "matrix4:CS.2", "matrix5:CS", "green", [ "h-16", "v-54", "h362", "v65.65" ] ],
+    [ "matrix4:CLK.2", "matrix5:CLK", "white", [ "h-20", "v-60", "h362", "v61.86" ] ]
+  ]
+}
