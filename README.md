@@ -16,4 +16,4 @@ Department / Program:
 Objectives of the Course:
   Learning embedded systems architecture, designing embedded applications, writing programs for embedded systems.
 Target Embedded System
-  ESP32
+  ESP32 with microPython (or Raspberry pi 3 with c++)
