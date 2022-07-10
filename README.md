@@ -15,3 +15,5 @@ Department / Program:
   Computer Engineering
 Objectives of the Course:
   Learning embedded systems architecture, designing embedded applications, writing programs for embedded systems.
+Target Embedded System
+  ESP32
